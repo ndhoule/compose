@@ -1,0 +1,19 @@
+{
+  "name": "compose",
+  "repo": "ndhoule/compose",
+  "version": "1.0.0",
+  "description": "Compose a list of functions into a single function.",
+  "keywords": [
+    "functional",
+    "compose"
+  ],
+  "license": "MIT",
+  "scripts": ["index.js"],
+  "dependencies": {
+    "ndhoule/arity": "^1.0.0"
+  },
+  "development": {
+    "mochajs/mocha": "^2.1.0",
+    "chaijs/deep-eql": "^0.1.3"
+  }
+}
