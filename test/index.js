@@ -10,8 +10,12 @@ describe('compose', function() {
   var add, identity;
 
   beforeEach(function() {
-    add = function(a, b) { return a + b; };
-    identity = function(val) { return val; };
+    add = function(a, b) {
+      return a + b;
+    };
+    identity = function(val) {
+      return val;
+    };
   });
 
   it('should be a function', function() {
@@ -23,8 +27,12 @@ describe('compose', function() {
   });
 
   it('should return a function with an arity equal to that of the final argument', function() {
-    var a = function(a, b) { return a + b; };
-    var b = function(a, b, c) { return a + b + c; };
+    var a = function(a, b) {
+      return a + b;
+    };
+    var b = function(a, b, c) {
+      return a + b + c;
+    };
     var fn = compose(a, b);
 
     assert.equal(fn.length, b.length);
@@ -58,7 +66,9 @@ describe('compose', function() {
   });
 
   it('should pass the results of the previous function call to the next', function() {
-    var increment = function(a) { return add(a, 1); };
+    var increment = function(a) {
+      return add(a, 1);
+    };
     var first = sinon.spy(increment);
     var second = sinon.spy(increment);
     var third = sinon.spy(increment);
@@ -72,9 +82,17 @@ describe('compose', function() {
   });
 
   it('should throw an error if any of its arguments are non-functions', function() {
-    assert.throws(function() { compose('abc'); });
-    assert.throws(function() { compose(true, identity, identity); });
-    assert.throws(function() { compose(identity, 1, identity); });
-    assert.throws(function() { compose(identity, identity, 'fdsa'); });
+    assert.throws(function() {
+      compose('abc');
+    });
+    assert.throws(function() {
+      compose(true, identity, identity);
+    });
+    assert.throws(function() {
+      compose(identity, 1, identity);
+    });
+    assert.throws(function() {
+      compose(identity, identity, 'fdsa');
+    });
   });
 });

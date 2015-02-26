@@ -43,14 +43,12 @@ var compose = function compose(/* funcs */) {
   var funcs = Array.prototype.slice.call(arguments);
   var first = funcs.pop();
   var rest = funcs.reverse();
-
   return arity(first.length, function() {
     var result = first.apply(this, arguments);
 
     for (var i = 0; i < rest.length; i += 1) {
       result = rest[i].call(this, result);
     }
-
     return result;
   });
 };
