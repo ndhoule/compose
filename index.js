@@ -31,12 +31,9 @@ var compose = function compose(/* funcs */) {
     throw new Error('Expected at least one argument');
   }
 
-  var funcs = Array.prototype.slice.call(arguments);
-
-  // Type check all inputs
-  for (var i = 0; i < funcs.length; i += 1) {
-    if (typeof funcs[i] !== 'function') {
-      throw new TypeError('Expected a function but received a ' + typeof funcs[i] + ' at argument index ' + i);
+  for (var i = 0; i < arguments.length; i += 1) {
+    if (typeof arguments[i] !== 'function') {
+      throw new TypeError('Expected a function but received a ' + typeof arguments[i] + ' at argument index ' + i);
     }
   }
 
@@ -45,6 +42,7 @@ var compose = function compose(/* funcs */) {
     return arguments[0];
   }
 
+  var funcs = Array.prototype.slice.call(arguments);
   var first = funcs.pop();
   var rest = funcs.reverse();
 
