@@ -25,6 +25,7 @@ var arity = require('arity');
  * addThenSquare(1, 2);
  * //=> 9
  */
+
 var compose = function compose(/* funcs */) {
   if (!arguments.length) {
     throw new Error('Expected at least one argument');
