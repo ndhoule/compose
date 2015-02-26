@@ -28,7 +28,7 @@ var arity = require('arity');
 
 var compose = function compose(/* funcs */) {
   if (!arguments.length) {
-    throw new Error('Expected at least one argument');
+    throw new Error('Expected at least one argument but received zero');
   }
 
   for (var i = 0; i < arguments.length; i += 1) {
@@ -37,7 +37,7 @@ var compose = function compose(/* funcs */) {
     }
   }
 
-  // No point in composing/wrapping a single function
+  // Don't wrap a single function
   if (arguments.length === 1) {
     return arguments[0];
   }
