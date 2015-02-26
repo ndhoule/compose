@@ -1,3 +1,5 @@
+/* globals describe it beforeEach */
+
 'use strict';
 
 var assert = require('assert');
@@ -21,8 +23,8 @@ describe('compose', function() {
   });
 
   it('should return a function with an arity equal to that of the final argument', function() {
-    var a = function(a, b) {};
-    var b = function(a, b, c) {};
+    var a = function(a, b) { return a + b; };
+    var b = function(a, b, c) { return a + b + c; };
     var fn = compose(a, b);
 
     assert.equal(fn.length, b.length);
