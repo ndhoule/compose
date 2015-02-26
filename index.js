@@ -11,8 +11,6 @@ var arity = require('arity');
  *
  * @name compose
  * @api public
- * @category Function
- * @see {@link pipe}
  * @param {...Function} funcs The functions to compose into a single function.
  * @return {Function} Returns a new function which, when called, will invoke each input function in
  * right-to-left order and return the result of the final function call.
