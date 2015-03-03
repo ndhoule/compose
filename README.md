@@ -1,4 +1,4 @@
-# compose [![Circle CI][circleci-badge]][circleci-link]
+# compose [![CI][ci-badge]][ci-link]
 
 Compose a list of functions into a single function.
 
@@ -28,5 +28,5 @@ addThenSquare(1, 2); //=> 9
 
 Released under the [MIT license](LICENSE.md).
 
-[circleci-link]: https://circleci.com/gh/ndhoule/compose
-[circleci-badge]: https://circleci.com/gh/ndhoule/compose.svg?style=svg&circle-token=9242bc13cb72c2626b7503193046da5678ae1c22
+[ci-link]: https://travis-ci.org/ndhoule/compose
+[ci-badge]: https://travis-ci.org/ndhoule/compose.svg?branch=master
