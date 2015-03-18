@@ -1,0 +1,25 @@
+sudo: false
+addons:
+  sauce_connect: true
+language: node_js
+script: make test
+node_js:
+- '0.10'
+matrix:
+  include:
+  - env: BROWSER_NAME=chrome BROWSER_VERSION=40
+  - env: BROWSER_NAME=chrome BROWSER_VERSION=39
+  - env: BROWSER_NAME=firefox BROWSER_VERSION=35
+  - env: BROWSER_NAME=firefox BROWSER_VERSION=34
+  - env: BROWSER_NAME=ie BROWSER_VERSION=6
+  - env: BROWSER_NAME=ie BROWSER_VERSION=7
+  - env: BROWSER_NAME=ie BROWSER_VERSION=8
+  - env: BROWSER_NAME=ie BROWSER_VERSION=9
+  - env: BROWSER_NAME=ie BROWSER_VERSION=10
+  - env: BROWSER_NAME=ie BROWSER_VERSION=11
+  - env: BROWSER_NAME=safari BROWSER_VERSION=8
+  - env: BROWSER_NAME=safari BROWSER_VERSION=7
+env:
+  global:
+  - secure: Ou/SPoGPLX6LvgJv5j3Tg0ngsMDiQ3nopaaBVCYrVlgOhH10ZlcQFLwUMszElFRfbakA8GOmAS+Yu2FsV1/W/FfZhhc7tg1A0nsXTq6/rmqMi9jF+4YgN74hiMb0ccSH8Zxo0IOIXZ2ma430aHO/dGNYcbCcn0/1LghBp+sfm+k=
+  - secure: AYg2rWLtrC3xrKMhy7iZ20qLvdZ15zQ2L040bvTboAMD5fRn6lR93blv+LXQXFEpe9S3mvNNsuWpFQENEJl/Q+d91AsRdNUfhnpGgJf1IK68VK7+MNbAxIxpprdeCovtr5CCPbkfuPHl6npc7mqOsQciBAUNSXc/5LEjZHZ/qJA=
