@@ -15,34 +15,46 @@ GREP ?=.
 # Tasks.
 #
 
-node_modules: $(wildcard package.json node_modules/**/package.json)
+# Install node packages.
+node_modules: $(wildcard package.json node_modules/*/package.json)
 	@npm install
 
+# Remove temporary files.
 clean:
-	@rm -rf node_modules *.log
+	@rm -rf *.log
+.PHONY: clean
 
-fmt:
+# Remove temporary and packaged files.
+distclean: clean
+	@rm -rf node_modules
+.PHONY: distclean
+
+# Format files.
+fmt: node_modules
 	@node_modules/.bin/jsfmt --write $(SRCS) $(TESTS)
+.PHONY: fmt
 
-lint:
+# Lint files.
+lint: node_modules
 	@node_modules/.bin/eslint $(SRCS) $(TESTS)
+.PHONY: lint
 
-test:
+# Run tests in node.
+test: node_modules
 	@node_modules/.bin/mocha \
 		--ui bdd \
 		--reporter spec \
 		--grep "$(GREP)" \
 		$(TESTS)
-
-test-browser:
-	@node_modules/.bin/zuul -- $(TESTS)
-
-test-browser-local:
-	@node_modules/.bin/zuul --local -- $(TESTS)
-
-#
-# Phonies and default.
-#
-
+.PHONY: test
 .DEFAULT_GOAL = test
-.PHONY: clean fmt lint test test-browser test-browser-local
+
+# Run tests in a Sauce Labs browser.
+test-browser: node_modules
+	@node_modules/.bin/zuul -- $(TESTS)
+.PHONY: test-browser
+
+# Run tests in a local browser.
+test-browser-local: node_modules
+	@node_modules/.bin/zuul --local -- $(TESTS)
+.PHONY: test-browser-local
