@@ -1,5 +1,5 @@
 {
-  "name": "compose",
+  "name": "@ndhoule/compose",
   "version": "1.0.1",
   "description": "Compose a list of functions into a single function.",
   "main": "index.js",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ndhoule/compose",
   "dependencies": {
-    "arity": "git://github.com/ndhoule/arity.git#1.0.0"
+    "@ndhoule/arity": "^1.0.1"
   },
   "devDependencies": {
     "deep-eql": "^0.1.3",

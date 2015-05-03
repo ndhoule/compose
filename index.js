@@ -1,6 +1,6 @@
 'use strict';
 
-var arity = require('arity');
+var arity = require('@ndhoule/arity');
 
 /**
  * Creates a function that is the [composition](https://en.wikipedia.org/wiki/Function_composition)
