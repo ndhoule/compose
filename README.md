@@ -5,7 +5,8 @@ Compose a list of functions into a single function.
 ## Installation
 
 ```sh
-component install ndhoule/compose
+$ component install ndhoule/compose
+$ npm install @ndhoule/compose
 ```
 
 ## API
