@@ -1,6 +1,11 @@
 'use strict';
 
-var arity = require('@ndhoule/arity');
+/**
+ * Module dependencies.
+ */
+
+// XXX: Hacky fix for Duo not supporting scoped modules
+var arity; try { arity = require('@ndhoule/arity'); } catch(e) { arity = require('arity'); }
 
 /**
  * Creates a function that is the [composition](https://en.wikipedia.org/wiki/Function_composition)
