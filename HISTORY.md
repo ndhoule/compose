@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Fix Duo compatibility
+
 ## 1.0.3
 
 - Ensure npm@>=2.7.0 in Travis CI
