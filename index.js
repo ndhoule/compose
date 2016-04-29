@@ -1,11 +1,10 @@
 'use strict';
 
-/**
+/*
  * Module dependencies.
  */
 
-// XXX: Hacky fix for Duo not supporting scoped modules
-var arity; try { arity = require('@ndhoule/arity'); } catch(e) { arity = require('arity'); }
+var arity = require('@ndhoule/arity');
 
 /**
  * Creates a function that is the [composition](https://en.wikipedia.org/wiki/Function_composition)
@@ -28,7 +27,6 @@ var arity; try { arity = require('@ndhoule/arity'); } catch(e) { arity = require
  * addThenSquare(1, 2);
  * //=> 9
  */
-
 var compose = function compose(/* funcs */) {
   if (!arguments.length) {
     throw new Error('Expected at least one argument but received zero');
@@ -58,7 +56,7 @@ var compose = function compose(/* funcs */) {
   });
 };
 
-/**
+/*
  * Exports.
  */
 
