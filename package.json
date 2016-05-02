@@ -1,6 +1,6 @@
 {
   "name": "@ndhoule/compose",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Compose a list of functions into a single function.",
   "main": "index.js",
   "repository": {
